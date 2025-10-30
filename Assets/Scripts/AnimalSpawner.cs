@@ -2,16 +2,6 @@ using UnityEngine;
 
 public class AnimalSpawner : MonoBehaviour
 {
-    [System.Serializable]
-    public class AnimalEntry
-    {
-        public string animalName;
-        public GameObject prefab;
-    }
-
-    [Header("Animal Prefabs")]
-    public AnimalEntry[] animals;
-
     [Header("Player Reference")]
     public Transform player;
 
@@ -28,9 +18,15 @@ public class AnimalSpawner : MonoBehaviour
 
     private GameObject activeAnimal;   // currently spawned animal
 
-    public void SpawnAnimal(string animalName)
+    // --- Spawn by prefab (Inspector-friendly version) ---
+    public void SpawnAnimal(GameObject prefab)
     {
-        // Prevent multiple spawns
+        if (prefab == null)
+        {
+            Debug.LogWarning("AnimalSpawner: No prefab provided to spawn.");
+            return;
+        }
+
         if (activeAnimal != null)
         {
             Debug.Log("AnimalSpawner: Cannot spawn — another animal is still active.");
@@ -43,23 +39,16 @@ public class AnimalSpawner : MonoBehaviour
             return;
         }
 
-        AnimalEntry entry = System.Array.Find(animals, a => a.animalName == animalName);
-        if (entry == null || entry.prefab == null)
-        {
-            Debug.LogWarning($"AnimalSpawner: No prefab found for '{animalName}'.");
-            return;
-        }
-
         Vector3 spawnPos = player.position + player.forward * spawnDistance;
         spawnPos.y += heightOffset;
 
-        activeAnimal = Instantiate(entry.prefab, spawnPos, Quaternion.identity);
+        activeAnimal = Instantiate(prefab, spawnPos, Quaternion.identity);
 
-        // Give it a lifecycle controller and tell it who spawned it
+        // Add lifecycle controller and initialize
         var life = activeAnimal.AddComponent<AnimalLifecycle>();
         life.Initialize(defaultIdleLifetime, this);
 
-        Debug.Log($"Spawned {animalName} at {spawnPos}");
+        Debug.Log($"Spawned {prefab.name} at {spawnPos}");
     }
 
     // Called by AnimalLifecycle when the creature despawns
@@ -67,12 +56,5 @@ public class AnimalSpawner : MonoBehaviour
     {
         activeAnimal = null;
         Debug.Log("AnimalSpawner: Animal despawned, spawner unlocked.");
-    }
-
-    private void Update()
-    {
-        // Temporary test: press R to spawn a rabbit
-        if (Input.GetKeyDown(KeyCode.R))
-            SpawnAnimal("Rabbit");
     }
 }

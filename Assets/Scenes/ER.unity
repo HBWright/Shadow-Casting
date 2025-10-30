@@ -427,13 +427,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699616054}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3432773, y: 0.5991842, z: 0.50623447, w: 0.5165904}
+  m_LocalRotation: {x: -0.7119538, y: 0.20430425, z: -0.34682125, w: 0.5754099}
   m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1.0244}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -14.595, y: 87.259, z: 74.92}
+  m_LocalEulerAnglesHint: {x: 222.658, y: 277.598, z: 69.768}
 --- !u!4 &769643835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
@@ -813,9 +813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animals:
-  - animalName: Rabbit_DEMO
-    prefab: {fileID: 919132149155446097, guid: 13afcc5e9787bf444aa2ad511d3b3012, type: 3}
   player: {fileID: 1881918751}
   spawnDistance: 2
   heightOffset: 0
@@ -956,9 +953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animals:
-  - animalName: WOLF_DEMO
-    prefab: {fileID: 919132149155446097, guid: d2e05a35a8ee32f44aa4ceb009297b67, type: 3}
   player: {fileID: 1881918751}
   spawnDistance: 2
   heightOffset: 0
@@ -975,9 +969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animals:
-  - animalName: WOLF_DEMO
-    prefab: {fileID: 919132149155446097, guid: d2e05a35a8ee32f44aa4ceb009297b67, type: 3}
   player: {fileID: 1881918751}
   spawnDistance: 2
   heightOffset: 0
@@ -4690,7 +4681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2882383461119109060, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2882383461119109060, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -4709,12 +4700,16 @@ PrefabInstance:
       value: AnimalSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2882383461119109060, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 7317ca5201a54a247a3c6bdb29a4c6d0, type: 3}
+    - target: {fileID: 2882383461119109060, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: SpawnAnimal("Rhino");
       objectReference: {fileID: 0}
     - target: {fileID: 2882383461119109060, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3824516172545006520, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _shapes.Array.size
@@ -4830,7 +4825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7408246161406225218, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7408246161406225218, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -4849,12 +4844,16 @@ PrefabInstance:
       value: AnimalSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7408246161406225218, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: d2e05a35a8ee32f44aa4ceb009297b67, type: 3}
+    - target: {fileID: 7408246161406225218, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: SpawnAnimal("Wolf");
       objectReference: {fileID: 0}
     - target: {fileID: 7408246161406225218, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7408246161540455872, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.size
@@ -4862,7 +4861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7408246161540455872, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7408246161540455872, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -4881,12 +4880,16 @@ PrefabInstance:
       value: AnimalSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7408246161540455872, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: d2e05a35a8ee32f44aa4ceb009297b67, type: 3}
+    - target: {fileID: 7408246161540455872, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: SpawnAnimal("Wolf");
       objectReference: {fileID: 0}
     - target: {fileID: 7408246161540455872, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7408246162529147006, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.size
@@ -4894,7 +4897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7408246162529147006, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7408246162529147006, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -4913,12 +4916,16 @@ PrefabInstance:
       value: AnimalSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7408246162529147006, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 13afcc5e9787bf444aa2ad511d3b3012, type: 3}
+    - target: {fileID: 7408246162529147006, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: SpawnAnimal("Rabbit");
       objectReference: {fileID: 0}
     - target: {fileID: 7408246162529147006, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7484545356689573895, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _transformFeatureStateProvider
@@ -4938,7 +4945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8334117764122277784, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8334117764122277784, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -4957,12 +4964,16 @@ PrefabInstance:
       value: AnimalSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8334117764122277784, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 13afcc5e9787bf444aa2ad511d3b3012, type: 3}
+    - target: {fileID: 8334117764122277784, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: SpawnAnimal("Rabbit");
       objectReference: {fileID: 0}
     - target: {fileID: 8334117764122277784, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8334117764947309411, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.size
@@ -4970,7 +4981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8334117764947309411, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8334117764947309411, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -4989,12 +5000,16 @@ PrefabInstance:
       value: AnimalSpawner, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8334117764947309411, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
+      propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 7317ca5201a54a247a3c6bdb29a4c6d0, type: 3}
+    - target: {fileID: 8334117764947309411, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: SpawnAnimal("Rhino");
       objectReference: {fileID: 0}
     - target: {fileID: 8334117764947309411, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8925081046665159682, guid: 48779c4e9105c1d4c986f52958bba9a3, type: 3}
       propertyPath: _shapes.Array.data[0]
@@ -5089,9 +5104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animals:
-  - animalName: Rhino Walk
-    prefab: {fileID: 919132149155446097, guid: 7317ca5201a54a247a3c6bdb29a4c6d0, type: 3}
   player: {fileID: 1881918751}
   spawnDistance: 2
   heightOffset: 0
@@ -5108,9 +5120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animals:
-  - animalName: Rabbit_DEMO
-    prefab: {fileID: 919132149155446097, guid: 13afcc5e9787bf444aa2ad511d3b3012, type: 3}
   player: {fileID: 1881918751}
   spawnDistance: 2
   heightOffset: 0
@@ -5132,9 +5141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animals:
-  - animalName: Rhino Walk
-    prefab: {fileID: 919132149155446097, guid: 7317ca5201a54a247a3c6bdb29a4c6d0, type: 3}
   player: {fileID: 1881918751}
   spawnDistance: 2
   heightOffset: 0
