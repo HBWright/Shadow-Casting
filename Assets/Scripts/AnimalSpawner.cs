@@ -57,4 +57,6 @@ public class AnimalSpawner : MonoBehaviour
         activeAnimal = null;
         Debug.Log("AnimalSpawner: Animal despawned, spawner unlocked.");
     }
+
 }
+
