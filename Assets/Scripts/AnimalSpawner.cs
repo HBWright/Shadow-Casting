@@ -22,16 +22,27 @@ public class AnimalSpawner : MonoBehaviour
     [Tooltip("Optional height offset for spawning.")]
     public float heightOffset = 0.0f;
 
-    // --- Main spawn method ---
+    [Header("Lifetime Settings")]
+    [Tooltip("Default idle time before despawning, if no task is active.")]
+    public float defaultIdleLifetime = 10f;
+
+    private GameObject activeAnimal;   // currently spawned animal
+
     public void SpawnAnimal(string animalName)
     {
+        // Prevent multiple spawns
+        if (activeAnimal != null)
+        {
+            Debug.Log("AnimalSpawner: Cannot spawn — another animal is still active.");
+            return;
+        }
+
         if (player == null)
         {
             Debug.LogWarning("AnimalSpawner: Player reference not assigned.");
             return;
         }
 
-        // Find the prefab that matches the requested animal name
         AnimalEntry entry = System.Array.Find(animals, a => a.animalName == animalName);
         if (entry == null || entry.prefab == null)
         {
@@ -39,13 +50,29 @@ public class AnimalSpawner : MonoBehaviour
             return;
         }
 
-        // Determine spawn position relative to player
         Vector3 spawnPos = player.position + player.forward * spawnDistance;
         spawnPos.y += heightOffset;
 
-        // Instantiate animal prefab
-        GameObject spawnedAnimal = Instantiate(entry.prefab, spawnPos, Quaternion.identity);
+        activeAnimal = Instantiate(entry.prefab, spawnPos, Quaternion.identity);
+
+        // Give it a lifecycle controller and tell it who spawned it
+        var life = activeAnimal.AddComponent<AnimalLifecycle>();
+        life.Initialize(defaultIdleLifetime, this);
 
         Debug.Log($"Spawned {animalName} at {spawnPos}");
+    }
+
+    // Called by AnimalLifecycle when the creature despawns
+    public void OnAnimalDespawned()
+    {
+        activeAnimal = null;
+        Debug.Log("AnimalSpawner: Animal despawned, spawner unlocked.");
+    }
+
+    private void Update()
+    {
+        // Temporary test: press R to spawn a rabbit
+        if (Input.GetKeyDown(KeyCode.R))
+            SpawnAnimal("Rabbit");
     }
 }
