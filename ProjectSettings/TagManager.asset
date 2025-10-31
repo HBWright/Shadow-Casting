@@ -8,6 +8,8 @@ TagManager:
   - QDSUIBackplateGradient
   - LeftHand
   - RightHand
+  - RabbitWall
+  - Enemy
   layers:
   - Default
   - TransparentFX
