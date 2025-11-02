@@ -1163,6 +1163,7 @@ GameObject:
   - component: {fileID: 2274088799213542237}
   - component: {fileID: 3609900702713310291}
   - component: {fileID: 2488063196608428394}
+  - component: {fileID: 8718748762964457663}
   m_Layer: 0
   m_Name: Wild_rabbit_v2_prefab
   m_TagString: Untagged
@@ -1242,6 +1243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822c307fa580df64c8ba4bff646d0b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startDelay: 3
   searchRadius: 20
   holeTag: RabbitWall
 --- !u!136 &2488063196608428394
@@ -1267,6 +1269,18 @@ CapsuleCollider:
   m_Height: 0.97
   m_Direction: 2
   m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &8718748762964457663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7409988618533297549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ae4e7d2ab266844b9b071f3314a150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7450250529330509803
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,23 +1,28 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class AnimalBase : MonoBehaviour
 {
     protected NavMeshAgent agent;
     protected Animator animator;
-
-    protected virtual void Awake()
-    {
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
-        //agent.updateRotation = true;
-    }
+    [SerializeField] private float startDelay = 3f; // Adjustable wait time before movement
+    private bool canMove = false;
 
     protected virtual void Start()
     {
-        // Default idle behavior
-        agent.isStopped = true;
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        agent.isStopped = true; // prevent movement right away
+        StartCoroutine(EnableMovementAfterDelay());
+    }
+
+    IEnumerator EnableMovementAfterDelay()
+    {
+        yield return new WaitForSeconds(startDelay);
+        agent.isStopped = false;
+        canMove = true;
     }
 
     protected virtual void Update()
