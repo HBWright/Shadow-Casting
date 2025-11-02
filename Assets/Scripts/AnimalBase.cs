@@ -1,14 +1,17 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class AnimalBase : MonoBehaviour
 {
     protected NavMeshAgent agent;
+    protected Animator animator;
 
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        //agent.updateRotation = true;
     }
 
     protected virtual void Start()
@@ -19,7 +22,9 @@ public abstract class AnimalBase : MonoBehaviour
 
     protected virtual void Update()
     {
-        // Shared movement logic could go here (later animations, etc.)
+        // If agent is moving, isStopped is false → moving
+        bool isMoving = !agent.isStopped && agent.velocity.magnitude > 0.1f;
+        animator.SetBool("IsMoving", isMoving);
     }
 
     public virtual void Idle()

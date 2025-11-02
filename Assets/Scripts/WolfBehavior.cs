@@ -23,6 +23,10 @@ public class WolfBehavior : AnimalBase
     private GameObject FindNearestEnemy()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        if (enemies == null)
+        {
+            Debug.LogWarning($"{name}: No Gamobject Found with tag 'Enemy'!");
+        }
         GameObject nearest = null;
         float bestDist = Mathf.Infinity;
 
