@@ -525,6 +525,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7317ca5201a54a247a3c6bdb29a4c6d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1506203152894669751}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7317ca5201a54a247a3c6bdb29a4c6d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1727024299453827467}
   m_SourcePrefab: {fileID: 100100000, guid: 7317ca5201a54a247a3c6bdb29a4c6d0, type: 3}
 --- !u!1 &7093460865285108150 stripped
 GameObject:
@@ -562,7 +565,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.4
-  m_Speed: 3.5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -597,3 +600,20 @@ CapsuleCollider:
   m_Height: 3.6758828
   m_Direction: 0
   m_Center: {x: -0.59656405, y: 1, z: 0}
+--- !u!114 &1727024299453827467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7093460865285108150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a50b885bc71690419aca4bd82eda306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchRadius: 10
+  targetTags:
+  - Enemy
+  - RhinoWall
+  chargeSpeed: 10

@@ -12,6 +12,7 @@ public class WolfBehavior : AnimalBase
         GameObject target = FindNearestEnemy();
         if (target != null)
         {
+            Vector3 dir = (target.transform.position - agent.transform.position).normalized;
             MoveTo(target.transform.position);
         }
         else
