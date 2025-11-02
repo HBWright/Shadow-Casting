@@ -1,15 +1,16 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+
 
 public class RabbitBehavior : AnimalBase
 {
     public float searchRadius = 10f;
     public string holeTag = "RabbitWall";
 
-    protected override void Start()
+    protected override void BeginBehavior()
     {
-        base.Start();
-        
+
         GameObject target = FindNearestHole();
         if (target == null)
         {
@@ -52,4 +53,5 @@ public class RabbitBehavior : AnimalBase
 
         return nearest;
     }
+  
 }

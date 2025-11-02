@@ -18,11 +18,14 @@ public class AnimalLifecycle : MonoBehaviour
     private bool activeTask = false;
     private bool despawning = false;
 
-    
+    protected Animator animator;
+
+
     private AnimalSpawner spawner;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         // Start invisible
         transform.localScale = Vector3.one * startScale;
 
@@ -62,6 +65,7 @@ public class AnimalLifecycle : MonoBehaviour
     private IEnumerator Despawn()
     {
         if (despawning) yield break;
+        animator.SetBool("IsDead", true);
         despawning = true;
 
         // Play despawn particles

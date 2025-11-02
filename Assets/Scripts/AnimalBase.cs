@@ -22,7 +22,7 @@ public abstract class AnimalBase : MonoBehaviour
     {
         yield return new WaitForSeconds(startDelay);
         agent.isStopped = false;
-        canMove = true;
+        BeginBehavior();
     }
 
     protected virtual void Update()
@@ -42,4 +42,5 @@ public abstract class AnimalBase : MonoBehaviour
         agent.isStopped = false;
         agent.SetDestination(position);
     }
+    protected virtual void BeginBehavior() { }
 }

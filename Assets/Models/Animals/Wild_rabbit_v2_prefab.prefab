@@ -1281,6 +1281,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ae4e7d2ab266844b9b071f3314a150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnParticles: {fileID: 2410488765419824066, guid: 3778a5e3d3c092844b0ab2079e99912a, type: 3}
+  despawnParticles: {fileID: 2410488765419824066, guid: 3778a5e3d3c092844b0ab2079e99912a, type: 3}
+  startScale: 0
+  endScale: 1
+  scaleDuration: 3
+  idleLifetime: 10
 --- !u!1 &7450250529330509803
 GameObject:
   m_ObjectHideFlags: 0

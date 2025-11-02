@@ -1,11 +1,14 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class WolfBehavior : AnimalBase
 {
     public float attackRange = 5f;
     public string enemyTag = "Enemy";
 
-    protected override void Update()
+
+    protected override void BeginBehavior()
     {
         base.Update();
 
@@ -43,4 +46,6 @@ public class WolfBehavior : AnimalBase
 
         return nearest;
     }
+
+
 }

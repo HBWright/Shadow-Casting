@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+
 
 public class RhinoBehavior : AnimalBase
 {
@@ -9,10 +11,8 @@ public class RhinoBehavior : AnimalBase
 
     private GameObject chargeTarget;
 
-    protected override void Start()
-    {
-        base.Start();
-
+    protected override void BeginBehavior()
+    { 
         // Find the closest valid target
         chargeTarget = FindNearestTarget();
 
@@ -65,4 +65,6 @@ public class RhinoBehavior : AnimalBase
 
         return nearest;
     }
+  
+
 }
