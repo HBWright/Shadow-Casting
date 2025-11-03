@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 6380360795964560571}
   - component: {fileID: 1908637291688635886}
   - component: {fileID: 2037644985049659783}
+  - component: {fileID: 7323489629520095869}
   m_Layer: 0
   m_Name: RhinoRotation
-  m_TagString: Untagged
+  m_TagString: Rhino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +96,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7041470653446483110}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.4
+  m_Radius: 1
   m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
@@ -125,7 +126,6 @@ MonoBehaviour:
   targetTags:
   - Enemy
   - RhinoWall
-  chargeSpeed: 12
 --- !u!136 &1908637291688635886
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -242,6 +242,18 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.40791744, y: -0.0006597042, z: 0.97030896}
     m_Extent: {x: 2.022571, y: 0.7973014, z: 0.9763122}
   m_DirtyAABB: 0
+--- !u!114 &7323489629520095869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041470653446483110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192d3b20f513e744985a1710dd1abcb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1361521032527261814
 PrefabInstance:
   m_ObjectHideFlags: 0

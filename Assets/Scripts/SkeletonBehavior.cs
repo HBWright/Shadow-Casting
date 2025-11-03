@@ -7,7 +7,8 @@ public class SkeletonBehavior : AnimalBase
     public string playerTag = "Player";
     public float searchRadius = 12f;
     public float stopDistanceBeforeAttack = 2f; // how close before stopping
-    public float deathDelay = 2f;
+    public float deathDelay = 5f;
+    public float attackDelay = 2f;
     public GameObject attackEffect;
 
     private bool hasAttacked = false;
@@ -76,27 +77,34 @@ public class SkeletonBehavior : AnimalBase
 
         if (attackEffect != null)
         {
+            yield return new WaitForSeconds(attackDelay);
             Instantiate(attackEffect, transform.position + Vector3.up * 1f, Quaternion.identity);
         }
 
         yield return new WaitForSeconds(deathDelay);
-        animator.SetBool("IsDead", true);
+        
         StartCoroutine(ShrinkAndDestroy());
     }
 
-    private IEnumerator ShrinkAndDestroy()
+    public IEnumerator ShrinkAndDestroy()
     {
+        animator.SetBool("IsDead", true);
         Vector3 originalScale = transform.localScale;
         float duration = 1.5f;
         float t = 0;
 
         while (t < duration)
         {
+            if (this == null) // stops if object destroyed externally
+                yield break;
+
             transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, t / duration);
             t += Time.deltaTime;
             yield return null;
         }
 
+
         Destroy(gameObject);
     }
+
 }

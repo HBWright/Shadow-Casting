@@ -1,18 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
-
+using UnityEngine.AI;
 
 public class RhinoBehavior : AnimalBase
 {
     public float searchRadius = 15f;
     public string[] targetTags = { "Enemy", "RhinoWall" };
-    public float chargeSpeed = 12f;
 
     private GameObject chargeTarget;
 
     protected override void BeginBehavior()
-    { 
+    {
+        base.BeginBehavior();
+
         // Find the closest valid target
         chargeTarget = FindNearestTarget();
 
@@ -23,25 +23,45 @@ public class RhinoBehavior : AnimalBase
             return;
         }
 
-        // Log and move toward it
-        Debug.Log($"{name}: Charging toward {chargeTarget.name} at {chargeTarget.transform.position}");
+        Debug.Log($"{name}: Chasing {chargeTarget.name}");
+    }
 
-        agent.speed = chargeSpeed;
-        MoveTo(chargeTarget.transform.position);
+    protected override void Update()
+    {
+        base.Update();
+
+        if (chargeTarget != null)
+        {
+            // Continuously update the agent's destination to the live target position
+            agent.SetDestination(chargeTarget.transform.position);
+
+            // Optional: check if we reached the target
+            float distance = Vector3.Distance(transform.position, chargeTarget.transform.position);
+            if (distance <= 1.5f) // Adjust to your contact range
+            {
+                // Trigger target's despawn or any other effect
+                var targetBehavior = chargeTarget.GetComponent<SkeletonBehavior>();
+                if (targetBehavior != null)
+                {
+                    StartCoroutine(targetBehavior.ShrinkAndDestroy());
+                }
+
+                // Stop moving after contact
+                Idle();
+                chargeTarget = null;
+            }
+        }
     }
 
     private GameObject FindNearestTarget()
     {
         List<GameObject> allTargets = new List<GameObject>();
 
-        // Find all possible targets by tags
         foreach (var tag in targetTags)
         {
             GameObject[] found = GameObject.FindGameObjectsWithTag(tag);
             if (found.Length > 0)
-            {
                 allTargets.AddRange(found);
-            }
         }
 
         if (allTargets.Count == 0)
@@ -65,6 +85,4 @@ public class RhinoBehavior : AnimalBase
 
         return nearest;
     }
-  
-
 }

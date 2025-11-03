@@ -12,6 +12,9 @@ TagManager:
   - Enemy
   - RhinoWall
   - tutorial_area
+  - Wolf
+  - Rabbit
+  - Rhino
   layers:
   - Default
   - TransparentFX

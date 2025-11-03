@@ -595,9 +595,10 @@ GameObject:
   - component: {fileID: 9195986244266393453}
   - component: {fileID: 4137890873227779601}
   - component: {fileID: 7957140760454749060}
+  - component: {fileID: 5822069833374026723}
   m_Layer: 0
   m_Name: Wolf_prefab
-  m_TagString: Untagged
+  m_TagString: Wolf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -675,8 +676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 3
-  attackRange: 20
-  enemyTag: Enemy
+  searchRadius: 15
+  targetTags:
+  - Enemy
 --- !u!136 &4137890873227779601
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -692,7 +694,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -718,6 +720,18 @@ MonoBehaviour:
   endScale: 1
   scaleDuration: 3
   idleLifetime: 10
+--- !u!114 &5822069833374026723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603979121980697801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192d3b20f513e744985a1710dd1abcb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2816857840429634508
 GameObject:
   m_ObjectHideFlags: 0

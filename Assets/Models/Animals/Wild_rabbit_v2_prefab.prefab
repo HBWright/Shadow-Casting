@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 8718748762964457663}
   m_Layer: 0
   m_Name: Wild_rabbit_v2_prefab
-  m_TagString: Untagged
+  m_TagString: Rabbit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
