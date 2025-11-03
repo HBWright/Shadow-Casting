@@ -5231,7 +5231,7 @@ GameObject:
   - component: {fileID: 1043633173}
   - component: {fileID: 1043633172}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: teleportplane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
