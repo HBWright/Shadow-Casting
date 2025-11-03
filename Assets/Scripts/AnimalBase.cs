@@ -8,7 +8,7 @@ public abstract class AnimalBase : MonoBehaviour
     protected NavMeshAgent agent;
     protected Animator animator;
     [SerializeField] private float startDelay = 3f; // Adjustable wait time before movement
-    private bool canMove = false;
+    protected bool canMove = false;
 
     protected virtual void Start()
     {
