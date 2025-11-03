@@ -11,6 +11,7 @@ TagManager:
   - RabbitWall
   - Enemy
   - RhinoWall
+  - tutorial_area
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Animals
-  - 
+  - tutorial
   - 
   - 
   - 
