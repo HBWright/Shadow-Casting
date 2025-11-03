@@ -1,17 +1,21 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class WolfBehavior : AnimalBase
 {
     public float attackRange = 5f;
     public string enemyTag = "Enemy";
 
-    protected override void Update()
+
+    protected override void BeginBehavior()
     {
         base.Update();
 
         GameObject target = FindNearestEnemy();
         if (target != null)
         {
+            Vector3 dir = (target.transform.position - agent.transform.position).normalized;
             MoveTo(target.transform.position);
         }
         else
@@ -23,6 +27,10 @@ public class WolfBehavior : AnimalBase
     private GameObject FindNearestEnemy()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        if (enemies == null)
+        {
+            Debug.LogWarning($"{name}: No Gamobject Found with tag 'Enemy'!");
+        }
         GameObject nearest = null;
         float bestDist = Mathf.Infinity;
 
@@ -38,4 +46,6 @@ public class WolfBehavior : AnimalBase
 
         return nearest;
     }
+
+
 }

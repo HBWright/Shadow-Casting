@@ -1,19 +1,29 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+
 
 public class RabbitBehavior : AnimalBase
 {
     public float searchRadius = 10f;
-    public string holeTag = "Rabbit Wall";
+    public string holeTag = "RabbitWall";
 
-    protected override void Start()
+    protected override void BeginBehavior()
     {
-        base.Start();
 
-        GameObject targetHole = FindNearestHole();
-        if (targetHole != null)
+        GameObject target = FindNearestHole();
+        if (target == null)
         {
-            MoveTo(targetHole.transform.position);
+            Debug.Log($"{gameObject.name}: No target found!");
+        }
+        else
+        {
+            Debug.Log($"{gameObject.name}: Moving toward {target.name} at {target.transform.position}");
+        }
+        if (target != null)
+        {
+            Vector3 dir = (target.transform.position - agent.transform.position).normalized;
+            MoveTo(target.transform.position);
         }
         else
         {
@@ -24,6 +34,10 @@ public class RabbitBehavior : AnimalBase
     private GameObject FindNearestHole()
     {
         GameObject[] holes = GameObject.FindGameObjectsWithTag(holeTag);
+        if (holes == null)
+        {
+            Debug.LogWarning($"{name}: No Gamobject Found with tag 'RabbitWall'!");
+        }
         GameObject nearest = null;
         float bestDist = Mathf.Infinity;
 
@@ -39,4 +53,5 @@ public class RabbitBehavior : AnimalBase
 
         return nearest;
     }
+  
 }

@@ -44,10 +44,6 @@ public class AnimalSpawner : MonoBehaviour
 
         activeAnimal = Instantiate(prefab, spawnPos, Quaternion.identity);
 
-        // Add lifecycle controller and initialize
-        var life = activeAnimal.AddComponent<AnimalLifecycle>();
-        life.Initialize(defaultIdleLifetime, this);
-
         Debug.Log($"Spawned {prefab.name} at {spawnPos}");
     }
 

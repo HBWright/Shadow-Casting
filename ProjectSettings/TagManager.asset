@@ -10,6 +10,7 @@ TagManager:
   - RightHand
   - RabbitWall
   - Enemy
+  - RhinoWall
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Overlay UI
   - Water
   - UI
-  - 
+  - Animals
   - 
   - 
   - 
