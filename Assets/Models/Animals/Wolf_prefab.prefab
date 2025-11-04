@@ -782,7 +782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 3
-  searchRadius: 7
+  searchRadius: 15
   targetTags:
   - Enemy
 --- !u!136 &4137890873227779601
