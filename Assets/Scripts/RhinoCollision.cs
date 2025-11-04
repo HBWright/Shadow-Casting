@@ -15,8 +15,13 @@ public class RhinoCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.LogWarning($"{name}: RHINO FOUND" + other);
         if (other.CompareTag("Enemy"))
         {
+            Collider myCollider = GetComponent<Collider>();
+            if (myCollider != null)
+                myCollider.enabled = false;
+
             Debug.LogWarning($"{name}: Hit skeleton!");
 
             SkeletonBehavior target = other.GetComponent<SkeletonBehavior>();
@@ -29,9 +34,15 @@ public class RhinoCollision : MonoBehaviour
                 Debug.LogWarning($"{name}: killed!");
             }
         }
-        if ((other.CompareTag("RhinoWall")) && (gameObject.CompareTag("Rhino")))
+        if (other.CompareTag("RhinoWall"))
         {
-            Destroy(other);
+    
+            Collider myCollider = GetComponent<Collider>();
+            if (myCollider != null)
+                myCollider.enabled = false;
+            
+            Destroy(other.gameObject);
+            Debug.LogWarning($"{name}: Destroyed RhinoWall");
         }
     }
 }

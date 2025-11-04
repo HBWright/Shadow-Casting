@@ -1164,6 +1164,8 @@ GameObject:
   - component: {fileID: 3609900702713310291}
   - component: {fileID: 2488063196608428394}
   - component: {fileID: 8718748762964457663}
+  - component: {fileID: 2099972990635564474}
+  - component: {fileID: 4804681822761458651}
   m_Layer: 0
   m_Name: Wild_rabbit_v2_prefab
   m_TagString: Rabbit
@@ -1217,7 +1219,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7409988618533297549}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.11
   m_Speed: 3.5
   m_Acceleration: 8
@@ -1261,7 +1263,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1287,6 +1289,45 @@ MonoBehaviour:
   endScale: 1
   scaleDuration: 3
   idleLifetime: 10
+--- !u!114 &2099972990635564474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7409988618533297549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c760053bbf543a4bb73ece15e262b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &4804681822761458651
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7409988618533297549}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7450250529330509803
 GameObject:
   m_ObjectHideFlags: 0

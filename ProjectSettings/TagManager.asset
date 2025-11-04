@@ -15,6 +15,9 @@ TagManager:
   - Wolf
   - Rabbit
   - Rhino
+  - RabbitDestory1
+  - RabbitDestory2
+  - RabbitDestroy3
   layers:
   - Default
   - TransparentFX
