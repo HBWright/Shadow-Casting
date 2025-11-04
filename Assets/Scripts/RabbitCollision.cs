@@ -5,9 +5,6 @@ public class RabbitCollision : MonoBehaviour
     private static int currentIndex = 0;
     private static readonly string[] destroyTags = { "RabbitDestory1", "RabbitDestory2" };
 
-    [Header("Floors to enable in order")]
-    public GameObject[] rabbitFloors; // assign in Inspector (RabbitFloor1, RabbitFloor2)
-
     private bool hasTriggered = false;
     private AnimalLifecycle self;
 
@@ -46,17 +43,6 @@ public class RabbitCollision : MonoBehaviour
             else
             {
                 Debug.LogWarning($"🐇 No object found with tag {targetTag}");
-            }
-
-            // ✅ Enable floor by array reference (works even if inactive)
-            if (rabbitFloors != null && currentIndex < rabbitFloors.Length && rabbitFloors[currentIndex] != null)
-            {
-                rabbitFloors[currentIndex].SetActive(true);
-                Debug.LogWarning($"{name}: Activated floor {rabbitFloors[currentIndex].name}");
-            }
-            else
-            {
-                Debug.LogWarning("🐇 No floor reference found for this index!");
             }
 
             AudioSource[] sources = GetComponents<AudioSource>();
