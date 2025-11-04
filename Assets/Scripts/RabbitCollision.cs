@@ -33,6 +33,13 @@ public class RabbitCollision : MonoBehaviour
             // Destroy the found object
             Destroy(target);
             Debug.LogWarning($"{name}: Destroyed {target.tag}");
+            
+            AudioSource[] sources = GetComponents<AudioSource>();
+
+            if (sources.Length > 1 && sources[1] != null)
+            {
+                sources[1].Play(); // Play the second one
+            }
         }
     }
 }
