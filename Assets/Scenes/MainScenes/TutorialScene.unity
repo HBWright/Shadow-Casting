@@ -3516,7 +3516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1390724149}
+  playerCamera: {fileID: 775791318}
   spawnDistance: 2
   heightOffset: 0
   defaultIdleLifetime: 10
@@ -5290,7 +5290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1390724149}
+  playerCamera: {fileID: 775791318}
   spawnDistance: 2
   heightOffset: 0
   defaultIdleLifetime: 10
@@ -10462,7 +10462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1390724149}
+  playerCamera: {fileID: 775791318}
   spawnDistance: 2
   heightOffset: 0
   defaultIdleLifetime: 10
@@ -21613,7 +21613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1390724149}
+  playerCamera: {fileID: 775791318}
   spawnDistance: 2
   heightOffset: 0
   defaultIdleLifetime: 10
@@ -21689,7 +21689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1390724149}
+  playerCamera: {fileID: 775791318}
   spawnDistance: 2
   heightOffset: 0
   defaultIdleLifetime: 10
@@ -22369,7 +22369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d385d45c88054998494f966620a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1390724149}
+  playerCamera: {fileID: 775791318}
   spawnDistance: 2
   heightOffset: 0
   defaultIdleLifetime: 10

@@ -3,7 +3,7 @@ using UnityEngine;
 public class AnimalSpawner : MonoBehaviour
 {
     [Header("Player Reference")]
-    public Transform player;
+    public Transform playerCamera; // assign OVRRig/TrackingSpace/CenterEyeAnchor here
 
     [Header("Spawn Settings")]
     [Tooltip("How far in front of the player to spawn animals.")]
@@ -15,6 +15,8 @@ public class AnimalSpawner : MonoBehaviour
     [Header("Lifetime Settings")]
     [Tooltip("Default idle time before despawning, if no task is active.")]
     public float defaultIdleLifetime = 10f;
+
+   
 
     private GameObject activeAnimal;   // currently spawned animal
 
@@ -33,13 +35,13 @@ public class AnimalSpawner : MonoBehaviour
             return;
         }
 
-        if (player == null)
+        if (playerCamera == null)
         {
             Debug.LogWarning("AnimalSpawner: Player reference not assigned.");
             return;
         }
 
-        Vector3 spawnPos = player.position + player.forward * spawnDistance;
+        Vector3 spawnPos = playerCamera.position + playerCamera.forward * spawnDistance;
         spawnPos.y += heightOffset;
 
         activeAnimal = Instantiate(prefab, spawnPos, Quaternion.identity);

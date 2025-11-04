@@ -794,7 +794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startDelay: 3
   playerTag: Player
-  searchRadius: 20
-  stopDistanceBeforeAttack: 3
+  searchRadius: 3
+  stopDistanceBeforeAttack: 0.5
   deathDelay: 2
+  attackDelay: 2
   attackEffect: {fileID: 2410488765419824066, guid: 9435e7c38438a264d8f98188a1bcf0b2, type: 3}

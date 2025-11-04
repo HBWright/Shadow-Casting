@@ -62,7 +62,7 @@ public class AnimalLifecycle : MonoBehaviour
         timer = 0f;
     }
 
-    private IEnumerator Despawn()
+    public IEnumerator Despawn()
     {
         if (despawning) yield break;
         animator.SetBool("IsDead", true);
