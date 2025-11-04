@@ -9,6 +9,13 @@ public class RabbitCollision : MonoBehaviour
     public GameObject[] rabbitFloors; // assign in Inspector (RabbitFloor1, RabbitFloor2)
 
     private bool hasTriggered = false;
+    private AnimalLifecycle self;
+
+    private void Awake()
+    {
+        self = GetComponent<AnimalLifecycle>();
+      
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -58,5 +65,8 @@ public class RabbitCollision : MonoBehaviour
 
             currentIndex++;
         }
+        StartCoroutine(self.Despawn());
+        Destroy(other.gameObject);
+        Debug.LogWarning($"{name}: Destroyed RabbitWall");
     }
 }
