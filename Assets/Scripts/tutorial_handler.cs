@@ -10,6 +10,12 @@ public class TutorialHandler : MonoBehaviour
     public GameObject Void;
     public GameObject TeleportL;
     public GameObject TeleportR;
+    public GameObject posesParent;
+    public GameObject light1; 
+    public GameObject light2; 
+    public GameObject light3;
+    public GameObject light4;
+    
 
     [Header("Fade Settings")]
     public float fadeDuration = 2f;
@@ -31,6 +37,11 @@ public class TutorialHandler : MonoBehaviour
 
     void Start()
     {
+        light1.SetActive(false);
+        light2.SetActive(false);
+        light3.SetActive(false);
+        light4.SetActive(false);
+
         foreach (var plane in planes)
         {
             if (plane == null) continue;
@@ -168,16 +179,20 @@ public class TutorialHandler : MonoBehaviour
         FadeOutAll();
         yield return new WaitForSeconds(2f);
 
-        // Set camera culling mask to everything
-        if (OVRigCamera != null)
-            OVRigCamera.cullingMask = ~0;
-
         yield return new WaitForSeconds(fadeDuration);
 
         TeleportL.SetActive(true);
         TeleportR.SetActive(true);
 
         if (Void != null)
+        {
+            if (OVRigCamera != null)
+                OVRigCamera.cullingMask = ~0;
+            light1.SetActive(true);
+            light2.SetActive(true);
+            light3.SetActive(true);
+            light4.SetActive(true);
             Void.SetActive(false);
+        }
     }
 }
