@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScenes/DungeonScene.unity
     guid: f6f5df4651950460ea653e127a0035d0
   - enabled: 1
-    path: Assets/Scenes/MainScenes/FInalScene.unity
+    path: Assets/Scenes/MainScenes/VictoryScene.unity
     guid: 61c76e03bdd3c4049bf23b72dcc57525
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: f828f285941572249b4b260b18d7e239, type: 2}
