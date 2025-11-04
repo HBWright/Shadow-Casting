@@ -1,46 +1,52 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RabbitCollision : MonoBehaviour
 {
+    private static int currentIndex = 0;  // Shared progress across all rabbits
+    private static readonly string[] destroyTags = { "RabbitDestory1", "RabbitDestory2" };
+
+    private bool hasTriggered = false;    // Prevents duplicate triggers from same rabbit
+
     private void OnTriggerEnter(Collider other)
     {
+        // Ignore if already processed
+        if (hasTriggered) return;
 
         if (other.CompareTag("RabbitWall"))
         {
+            hasTriggered = true;
+
+            // Disable this rabbit’s collider immediately
             Collider myCollider = GetComponent<Collider>();
             if (myCollider != null)
                 myCollider.enabled = false;
 
-            int index = 1;
-            GameObject target = null;
-
-            // Find the next RabbitDestroy object that still exists
-            while (true)
+            if (currentIndex >= destroyTags.Length)
             {
-                target = GameObject.FindWithTag("RabbitDestory" + index); //TYPO TO MATCH TAGS
-                if (target != null)
-                    break;
-                index++;
-
-                // Stop if there are no more
-                if (index > 5) // set a reasonable max
-                {
-                    Debug.LogWarning("No RabbitDestroy objects left!");
-                    return;
-                }
+                Debug.Log("🐇 All RabbitDestroy targets cleared!");
+                return;
             }
 
-            // Destroy the found object
-            Destroy(target);
-            Debug.LogWarning($"{name}: Destroyed {target.tag}");
-            
-            AudioSource[] sources = GetComponents<AudioSource>();
+            string targetTag = destroyTags[currentIndex];
+            GameObject target = GameObject.FindWithTag(targetTag);
 
-            if (sources.Length > 1 && sources[1] != null)
+            if (target != null)
             {
-                sources[1].Play(); // Play the second one
+                Destroy(target);
+                Debug.LogWarning($"{name}: Destroyed {targetTag}");
+
+                // Play the second audio source if available
+                AudioSource[] sources = GetComponents<AudioSource>();
+                if (sources.Length > 1 && sources[1] != null)
+                    sources[1].Play();
+
+                // Safely increment the index for next bunny
+                currentIndex++;
+            }
+            else
+            {
+                Debug.LogWarning($"🐇 No object found with tag {targetTag}");
             }
         }
     }
 }
-
