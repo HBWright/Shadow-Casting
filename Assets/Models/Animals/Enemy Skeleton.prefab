@@ -794,7 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startDelay: 3
   playerTag: Player
-  searchRadius: 3
+  searchRadius: 7
   stopDistanceBeforeAttack: 0.5
   deathDelay: 2
   attackDelay: 2
