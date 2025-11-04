@@ -1515,6 +1515,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c760053bbf543a4bb73ece15e262b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rabbitFloors:
+  - {fileID: 4283816680470817532, guid: 5ecae9e71276e694c9f8e1f0ae73f980, type: 3}
+  - {fileID: 8531493445930060575, guid: 1493acc54b6667043b47827ef180fc28, type: 3}
 --- !u!54 &4804681822761458651
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class AnimalLifecycle : MonoBehaviour
     [Header("Spawn/Despawn Effects")]
     public GameObject spawnParticles;
     public GameObject despawnParticles;
-
+    
     [Header("Scale Settings")]
     public float startScale = 0f;       // scale at spawn
     public float endScale = 1f;         // full scale
@@ -20,12 +20,12 @@ public class AnimalLifecycle : MonoBehaviour
 
     protected Animator animator;
 
-
     private AnimalSpawner spawner;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        
         // Start invisible
         transform.localScale = Vector3.one * startScale;
 
@@ -71,7 +71,11 @@ public class AnimalLifecycle : MonoBehaviour
         // Play despawn particles
         if (despawnParticles != null)
             Instantiate(despawnParticles, transform.position, Quaternion.identity);
-
+        AudioSource[] sources = GetComponents<AudioSource>();
+        if (sources[0] != null)
+        {
+            sources[0].Play();
+        }
         // Shrink and destroy
         yield return ScaleOverTime(startScale, scaleDuration, destroyAfter: true);
 
