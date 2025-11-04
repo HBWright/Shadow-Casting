@@ -1460,7 +1460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 3
-  searchRadius: 10
+  searchRadius: 7
   holeTag: RabbitWall
 --- !u!136 &2488063196608428394
 CapsuleCollider:
