@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SkeletonBehavior : AnimalBase
 {
@@ -9,6 +10,8 @@ public class SkeletonBehavior : AnimalBase
     public float stopDistanceBeforeAttack = 2f; // how close before stopping
     public float deathDelay = 5f;
     public float attackDelay = 2f;
+    public GameObject darken;
+    public AudioSource shoot; 
     public GameObject attackEffect;
 
     private bool hasAttacked = false;
@@ -74,6 +77,7 @@ public class SkeletonBehavior : AnimalBase
         hasAttacked = true;
         agent.isStopped = true;
         animator.SetBool("IsAttacking", true);
+        shoot.Play();
 
         if (attackEffect != null)
         {
@@ -83,7 +87,7 @@ public class SkeletonBehavior : AnimalBase
 
         yield return new WaitForSeconds(deathDelay);
         
-        StartCoroutine(ShrinkAndDestroy());
+        StartCoroutine(KillPlayer());
     }
 
     public IEnumerator ShrinkAndDestroy()
@@ -105,6 +109,14 @@ public class SkeletonBehavior : AnimalBase
 
 
         Destroy(gameObject);
+    }
+
+    public IEnumerator KillPlayer()
+    {
+        darken.SetActive(true);
+        yield return new WaitForSeconds(4f);
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 
 }
