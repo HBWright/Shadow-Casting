@@ -10,6 +10,7 @@ public class RabbitBehavior : AnimalBase
 
     protected override void BeginBehavior()
     {
+        base.BeginBehavior();
 
         GameObject target = FindNearestHole();
         if (target == null)
