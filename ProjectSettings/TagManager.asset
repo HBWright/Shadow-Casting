@@ -17,7 +17,8 @@ TagManager:
   - Rhino
   - RabbitDestory1
   - RabbitDestory2
-  - RabbitDestroy3
+  - RabbitFloor2
+  - RabbitFloor1
   layers:
   - Default
   - TransparentFX
