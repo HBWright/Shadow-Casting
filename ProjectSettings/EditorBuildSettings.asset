@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ER.unity
     guid: f9eef49e149966446a2f39b2441613ce
   - enabled: 0
     path: Assets/Scenes/HW.unity
-    guid: 810269f2210f673488bf2154171c6a4e
+    guid: 8ae958e1544959b41b11fe7080482554
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/TutorialScene.unity
+    guid: b43f973e5a5ae2645a14ea292d047117
+  - enabled: 1
+    path: Assets/Scenes/MainScenes/DungeonScene.unity
+    guid: f6f5df4651950460ea653e127a0035d0
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: f828f285941572249b4b260b18d7e239, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 70ccb13db0f833d478e07beba8176a12, type: 2}
