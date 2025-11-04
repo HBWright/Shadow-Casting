@@ -63,10 +63,12 @@ public class RabbitCollision : MonoBehaviour
             if (sources.Length > 1 && sources[1] != null)
                 sources[1].Play();
 
+            StartCoroutine(self.Despawn());
+            Destroy(other.gameObject);
+            Debug.LogWarning($"{name}: Destroyed RabbitWall");
+
             currentIndex++;
         }
-        StartCoroutine(self.Despawn());
-        Destroy(other.gameObject);
-        Debug.LogWarning($"{name}: Destroyed RabbitWall");
+        
     }
 }
