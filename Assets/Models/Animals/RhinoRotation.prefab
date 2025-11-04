@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 3
-  searchRadius: 5
+  searchRadius: 7
   targetTags:
   - Enemy
   - RhinoWall
