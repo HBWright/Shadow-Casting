@@ -28,7 +28,7 @@ public class DetectDestroy : MonoBehaviour
         yield return new WaitForSeconds(2f);
         steps.Play();
         darken.SetActive(true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("DungeonScene");
     }
 }
